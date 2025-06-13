@@ -7,7 +7,7 @@ on:
 
 jobs:
   test-backend:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
@@ -17,7 +17,7 @@ jobs:
         run: go test -race -v ./...
 # golanci-lint is currently disabled due to slowness
 #  lint-backend:
-#    runs-on: ubuntu-latest
+#    runs-on: ubuntu-22.04
 #    steps:
 #      - uses: actions/checkout@v4
 #      - uses: actions/setup-go@v5
@@ -28,7 +28,7 @@ jobs:
 #          version: 'v1.64'
 #          working-directory: backend
   format-backend:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
@@ -37,14 +37,14 @@ jobs:
       - working-directory: backend
         run: go fmt ./...
   lint-frontend:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
       - working-directory: frontend
         run: npm i && npm run lint
   test-frontend:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

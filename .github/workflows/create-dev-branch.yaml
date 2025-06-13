@@ -11,7 +11,7 @@ on:
 jobs:
   create-dev-branch:
     name: Create Dev Branch
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Check out repository
